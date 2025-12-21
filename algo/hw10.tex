@@ -1,0 +1,42 @@
+\documentclass[dvipdfmx,10pt]{jlreq}
+\usepackage[top=30truemm,bottom=30truemm,left=15truemm,right=15truemm]{geometry}
+\usepackage{url}
+
+\begin{document}
+
+\title{第10回アルゴリズムとデータ構造 課題}
+\author{2025311066 藤井壮樹}
+\date{\today}
+\maketitle
+
+\section{第8回予習復習問題の確認・修正}
+\subsection*{1.}
+リングバッファを使うことで実装することができる．
+\subsection*{2.}
+確認しました．
+\subsection*{3.}
+確認しました．
+\subsection*{4.}
+m分木において，幅優先探索の順に配列を入れることで実現することができる(補足)．
+
+\section{第10回予習復習問題}
+\subsection*{5.}
+まずは削除要素を探索する．探索失敗であれば失敗を返して終了する．\\
+探索に成功した場合，以下の手順で削除を行う．
+\begin{itemize}
+ \item その要素を削除する．
+ \item 木の再構成を行う．
+\end{itemize}
+なお，木の再構成をする際は，「再構成した木が二分木であること」，「計算量ができるtだけ少ないこと」の条件を満たす必要がある．\\
+\subsection*{6.}
+AVL木とは，通常の二分木を拡張して，最悪計算量をO(log n)に抑えることができるようにしたデータ構造である．\\
+
+\subsection*{7.}
+挿入と削除の後で各ノードでのバランス(左の木の高さから右の木の高さを引いた値)を回復する操作を行う必要がある．\\
+
+\begin{thebibliography}{}
+	\bibitem{文献1} アルゴリズムとデータ構造, 第9回講義資料
+  \bibitem{文献2} AVL木 \url{https://www-ui.is.s.u-tokyo.ac.jp/~takeo/course/2016/algorithm/AVL.pdf}
+\end{thebibliography}
+
+\end{document}
