@@ -1,0 +1,109 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[dvipdfmx]{jlreq}
+\usepackage[width=180mm,height=250mm]{geometry}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{float}
+\usepackage{url}
+\usepackage[shortlabels]{enumitem}
+\setlist[enumerate,1]{labelwidth=4zw,labelsep=1zw,leftmargin=*}
+\usepackage{tabularray}
+\newcommand{\maru}[1]{\mbox{\textcircled{$#1$}}}
+
+\newcommand{\answer}[1]{\begin{flushleft}\textbf{\underline{#1}}\end{flushleft}}
+\makeatletter
+\ifdefined\includegraphics%
+\let\@q@q@inclgraph=\includegraphics
+\renewcommand\includegraphics[2][]{%
+{\IfFileExists{#2}{\@q@q@inclgraph[#1]{#2}}{\typeout{Warning: File #2 is missing.}\begin{center}\framebox{\textcolor{red}{画像ファイル\url{#2}が見つかりません}}\end{center}}}}%
+\fi
+%
+\ifdefined\inputminted%
+\let\@q@q@inputmint=\inputminted
+\renewcommand\inputminted[3][]{%
+{\IfFileExists{#3}{\@q@q@inputmint[#1]{#2}{#3}}{\typeout{Warning: File #3 is missing.}\begin{center}\framebox{\textcolor{red}{プログラムファイル\url{#3}が見つかりません}}\end{center}}}}%
+\fi
+%
+\ifdefined\lstinputlisting%
+\let\@q@q@lstinputlisting=\lstinputlisting
+\renewcommand\lstinputlisting[2][]{%
+{\IfFileExists{#2}{\@q@q@lstinputlisting[#1]{#2}}{\typeout{Warning: File #2 is missing.}\begin{center}\framebox{\textcolor{red}{プログラムファイル\url{#2}が見つかりません}}\end{center}}}}%
+\fi
+%
+\renewcommand{\maketitle}[0]{
+\begin{center}
+\large{\textbf{\@title}}\normalsize \\
+\end{center}
+\begin{flushright}
+\@date \quad \@author
+\end{flushright}
+}
+\makeatother
+\IfFileExists{c:/Windows/win.ini}{\AtBeginDvi{\special{pdf:docinfo <</Keywords (Windows)>>}}}{%
+\IfFileExists{/cis/public/xmodmap.ic}{\AtBeginDvi{\special{pdf:docinfo <</Keywords (CIS)>>}}}{%
+\IfFileExists{~/.zshrc}{\AtBeginDvi{\special{pdf:docinfo <</Keywords (Mac)>>}}}{%
+\IfFileExists{/etc/os-release}{\AtBeginDvi{\special{pdf:docinfo <</Keywords (Linux)>>}}}{}}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\author{2025311066 藤井　壮樹}
+\title{離散数学II 第12回レポート}
+\maketitle
+\begin{enumerate}[問題1]
+\item 次の式の自由変数すべてを○で囲め。
+% ○で囲むには、\mbox{\textcircled{$x$}}のようにする。込み入っているので、\maru{x}で入力できるようにしてある。
+\[ [\forall y\{P(y)\rightarrow P(x)\wedge (\forall x(Q(y)\wedge P(x)))\}]\wedge {\maru{R}(z)}\wedge (\forall zQ(z))\wedge \maru{P}(y)\vee \maru{Q}(y) \]
+
+\item ある島には、正直族とうそつき族が住んでいる。外見では見分けがつかないが、正直族はいつでも命題論理で真であることを発言し、うそつき族は
+いつでも命題論理で偽であることを発言する。次の発言から、AからEの住民が正直族かうそつき族かを判定せよ。
+\begin{quote}
+A:「B, Eはどちらも正直族だ」\\
+B:「Cはうそつき族だ」\\
+C:「A, B, D, Eはみんなうそつき族だ」\\
+D:「A, B, Eはみんなうそつき族だ」\\
+E:「Dはうそつき族だ」
+
+\end{quote}
+\answer{解}
+A:正直族 \\
+B:正直族 \\
+C:うそつき族 \\
+D:うそつき族 \\
+E:正直族 \\
+\item 後置記法の論理式を入力すると真理値表を出力するプログラムが用意されている。 
+Javascript(HTML)、Haskell、Java, Cのうちいずれか1つを選んで、【あ】【い】に入るべきコードを求めよ。 
+また、論理式
+\[ ((b\leftrightarrow a)\rightarrow ((c\vee d)\oplus (b\wedge (\neg a)))) \]
+に対するプログラムの実行結果を示せ。
+\answer{解}% コードは \verb#   # 間に書くとよい。
+【あ】\verb# bh_y ^ bh_x # \\
+【い】\verb# not(bh_y < bh_x) #
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{./figure/table12.png}
+\caption{スクリーンショット}
+\end{figure}
+\end{enumerate}
+\newpage
+\section*{ミニッツペーパー}
+\subsection*{今回の授業内容で重要だと思ったこと}
+命題論理について考える時は，できるだけ簡単な形にしてから考えるほうがミスが少なくなると感じた．
+
+\subsection*{今回の授業内容でよく理解できなかった点、疑問に思ったこと}
+前期の離散数学Iで学んだ内容と似ていたが，変形などの新しいものがでてきて難しいと感じた．
+%%%%%%%%%%%% 以下、必要に応じて、行頭の%を消去した上で利用してください。
+% \section*{謝辞}
+
+%%% urlパッケージを利用できるので、参考文献にWebのURLを記すときには、\url{ }の中に入れてください。
+%%% 例) \url{https://en.wikipedia.org/wiki/Complete_graph}
+% \begin{thebibliography}{9}
+% \bibitem{}
+% \end{thebibliography}
+
+%%%%%%%%%%%%
+
+\end{document}
+
