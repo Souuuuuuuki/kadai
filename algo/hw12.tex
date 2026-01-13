@@ -1,0 +1,44 @@
+\documentclass[dvipdfmx,10pt]{jlreq}
+\usepackage[top=30truemm,bottom=30truemm,left=15truemm,right=15truemm]{geometry}
+\usepackage{url}
+
+\begin{document}
+
+\title{第12回予習復習問題}
+\author{2025311066 藤井壮樹}
+\date{\today}
+\maketitle
+
+\section{第10回予習復習問題の確認・修正}
+\subsection*{1.}
+確認しました．
+\subsection*{2.}
+確認しました．
+\subsection*{3.}
+確認しました．
+
+\section{第12回予習復習問題}
+\subsection*{4.}
+\begin{itemize}
+  \item まず，2分探索木と同様に削除を行う．
+  \item バランスを崩れたかどうかをチェックする．
+  \begin{itemize}
+    \item 崩れていなければ終了．
+    \item 崩れていれば，AVL木になるよう再構成する．
+  \end{itemize}
+\end{itemize}
+\subsection*{5.}
+\begin{itemize}
+  \item 定義が違う．(AVL木はバランスを保っている．)
+  \item 計算量が違う．
+  \item データの操作の仕方が違う．
+\end{itemize}
+\subsection*{6.}
+バランスが取れた多分木であるが，AVL木と違って各ノードが複数のカギを持つ．木の高さを極端に低くできるという特徴がある．
+
+\begin{thebibliography}{9}
+	\bibitem{文献1} 第12回授業資料
+  \bibitem{文献2} 平衡木の完全ガイド \today 閲覧 \url{https://everplay.jp/column/20882}
+\end{thebibliography}
+
+\end{document}
